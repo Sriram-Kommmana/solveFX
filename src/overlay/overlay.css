@@ -1,0 +1,129 @@
+/* =====================================================
+   SolveFX Overlay
+===================================================== */
+
+#solvefx-overlay {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    z-index: 999999999;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.4s ease;
+}
+
+#solvefx-overlay.show {
+    opacity: 1;
+}
+
+
+/* =====================================================
+   Image Overlays (Accepted / Wrong / Memory)
+===================================================== */
+
+.solvefx-image {
+    width: min(800px, 85vw);
+
+    opacity: 0;
+    animation: solvefxFadeIn 0.8s ease forwards;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+.solvefx-image-memory {
+    max-width: 250px;
+    width: 30vw;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+/* =====================================================
+   Windows XP Shutdown
+===================================================== */
+
+.shutdown {
+    background: #0A246A;
+    color: white;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.shutdown-text {
+    font-size: 46px;
+    font-weight: 300;
+    animation: solvefxFadeIn .8s ease forwards;
+}
+
+
+/* =====================================================
+   Runtime Error (Fake BSOD)
+===================================================== */
+
+.bsod {
+    background: #0078D7;
+    color: white;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.bsod-screen {
+    padding: 80px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    font-family: Consolas, monospace;
+    font-size: 28px;
+    line-height: 1.6;
+    animation: solvefxFadeIn .5s ease forwards;
+}
+
+
+/* =====================================================
+   Compile Error (Terminal)
+===================================================== */
+
+.terminal {
+    background: #111;
+    color: #ff4d4d;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.terminal-screen {
+    width: 100%;
+    height: 100%;
+    padding: 70px;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    font-family: Consolas, monospace;
+    font-size: 28px;
+    line-height: 1.7;
+    animation: solvefxFadeIn .5s ease forwards;
+}
+
+
+/* =====================================================
+   Fade Animation
+===================================================== */
+
+@keyframes solvefxFadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}

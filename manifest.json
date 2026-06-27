@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "SolveFX",
+  "version": "1.0.0",
+  "description": "Celebrate your LeetCode submissions with sounds and animations.",
+
+  "permissions": ["storage"],
+
+  "host_permissions": [
+    "https://leetcode.com/*"
+  ],
+
+  "content_scripts": [
+    {
+        "matches": ["https://leetcode.com/*"],
+        "css": [
+            "src/overlay/overlay.css"
+        ],
+        "js": [
+            "src/audio/audio.js",
+            "src/overlay/overlay.js",
+            "src/handlers/verdictHandler.js",
+            "src/content/content.js"
+        ],
+        "run_at": "document_start"
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/content/inject.js",
+        "assets/sounds/*",
+        "assets/images/*"
+      ],
+      "matches": [
+        "https://leetcode.com/*"
+      ]
+    }
+  ],
+
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "SolveFX"
+  }
+}
