@@ -95,7 +95,7 @@ SolveFX/
 1. Clone this repository.
 
 ```bash
-git clone https://github.com/Sriram-Kommmana/SolveFX.git
+git clone https://github.com/Sriram-Kommmana/solveFX.git
 ```
 
 2. Open Chrome and navigate to:
