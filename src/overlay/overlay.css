@@ -26,32 +26,95 @@
 
 
 /* =====================================================
-   Image Overlays (Accepted / Wrong / Memory)
+   Title Cards (Accepted / Wrong)
 ===================================================== */
 
-.solvefx-image {
-    width: min(800px, 85vw);
+.solvefx-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 
-    opacity: 0;
-    animation: solvefxFadeIn 0.8s ease forwards;
+    font-family: Impact, "Arial Black", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
 
+    animation: solvefxSlam 0.5s cubic-bezier(.2, 1.6, .4, 1) forwards;
     user-select: none;
-    pointer-events: none;
 }
 
-.solvefx-image-memory {
-    max-width: 250px;
-    width: 30vw;
+.solvefx-title b {
+    font-size: clamp(56px, 11vw, 140px);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    -webkit-text-stroke: 3px #000;
+    paint-order: stroke;
+}
 
-    user-select: none;
-    pointer-events: none;
+.solvefx-title small {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: none;
+    color: #fff;
+}
+
+.passed .solvefx-title b {
+    color: #ffc917;
+    text-shadow: 6px 6px 0 #000;
+}
+
+.failed {
+    backdrop-filter: grayscale(1);
+}
+
+.failed .solvefx-title b {
+    color: #e5322d;
+    text-shadow: 6px 6px 0 #000;
 }
 
 /* =====================================================
-   Windows XP Shutdown
+   Memory Limit (Dialog Box)
 ===================================================== */
 
-.shutdown {
+.solvefx-dialog {
+    width: min(420px, 85vw);
+    background: #f0f0f0;
+    color: #111;
+    border: 2px solid #333;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.5);
+    font-family: "Segoe UI", sans-serif;
+    animation: solvefxFadeIn .4s ease forwards;
+    user-select: none;
+}
+
+.solvefx-dialog__bar {
+    padding: 6px 10px;
+    background: #c62828;
+    color: #fff;
+    font-weight: 700;
+}
+
+.solvefx-dialog p {
+    margin: 18px;
+    font-size: 17px;
+}
+
+.solvefx-dialog__ok {
+    display: block;
+    width: 80px;
+    margin: 0 18px 18px auto;
+    padding: 4px 0;
+    border: 1px solid #333;
+    background: #e0e0e0;
+    text-align: center;
+}
+
+/* =====================================================
+   Shutdown Screen
+===================================================== */
+
+#solvefx-overlay.shutdown {
     background: #0A246A;
     color: white;
     font-family: "Segoe UI", sans-serif;
@@ -68,7 +131,7 @@
    Runtime Error (Fake BSOD)
 ===================================================== */
 
-.bsod {
+#solvefx-overlay.bsod {
     background: #0078D7;
     color: white;
     justify-content: flex-start;
@@ -92,7 +155,7 @@
    Compile Error (Terminal)
 ===================================================== */
 
-.terminal {
+#solvefx-overlay.terminal {
     background: #111;
     color: #ff4d4d;
     justify-content: flex-start;
@@ -113,8 +176,22 @@
 
 
 /* =====================================================
-   Fade Animation
+   Animations
 ===================================================== */
+
+@keyframes solvefxSlam {
+
+    from {
+        opacity: 0;
+        transform: scale(2.2) rotate(-6deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(-3deg);
+    }
+
+}
 
 @keyframes solvefxFadeIn {
 

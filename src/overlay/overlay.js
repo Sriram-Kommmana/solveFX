@@ -26,9 +26,13 @@ function showOverlay(type, data) {
 
         case "accepted":
 
+            overlay.classList.add("passed");
+
             overlay.innerHTML = `
-                <img class="solvefx-image"
-                    src="${chrome.runtime.getURL("assets/images/mission-passed.png")}" />
+                <div class="solvefx-title">
+                    <b>Accepted</b>
+                    <small>All test cases passed</small>
+                </div>
             `;
 
             break;
@@ -39,9 +43,13 @@ function showOverlay(type, data) {
 
         case "wrong":
 
+            overlay.classList.add("failed");
+
             overlay.innerHTML = `
-                <img class="solvefx-image"
-                    src="${chrome.runtime.getURL("assets/images/wasted.png")}" />
+                <div class="solvefx-title">
+                    <b>Wrong answer</b>
+                    <small>So close. Probably.</small>
+                </div>
             `;
 
             break;
@@ -53,8 +61,11 @@ function showOverlay(type, data) {
         case "memory":
 
             overlay.innerHTML = `
-                <img class="solvefx-image-memory"
-                    src="${chrome.runtime.getURL("assets/images/memory.png")}" />
+                <div class="solvefx-dialog">
+                    <div class="solvefx-dialog__bar">Out of memory</div>
+                    <p>Your solution asked for more memory than this problem allows.</p>
+                    <span class="solvefx-dialog__ok">OK</span>
+                </div>
             `;
 
             break;
@@ -69,7 +80,7 @@ function showOverlay(type, data) {
 
             overlay.innerHTML = `
                 <div class="shutdown-text">
-                    Windows is shutting down...
+                    Time's up. Shutting down...
                 </div>
             `;
 

@@ -8,3 +8,7 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Third-party sounds and images kept for personal use only. They must never be published.
+assets/sounds/
+assets/images/

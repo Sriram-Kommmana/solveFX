@@ -4,7 +4,7 @@
 
 SolveFX is a fun Chrome extension that enhances the LeetCode submission experience by playing unique sounds and displaying custom overlays based on the final verdict.
 
-Whether it's a satisfying **MISSION PASSED** after an Accepted solution or a nostalgic **Windows XP Shutdown** for Time Limit Exceeded, SolveFX makes every submission memorable.
+Whether it's a fanfare after an Accepted solution or a power-down screen for Time Limit Exceeded, SolveFX makes every submission memorable. Every sound is synthesised in the browser and every overlay is drawn with HTML and CSS, so the extension ships no audio or image files.
 
 ---
 
@@ -12,33 +12,33 @@ Whether it's a satisfying **MISSION PASSED** after an Accepted solution or a nos
 
 ### Accepted
 
-* GTA: San Andreas **Mission Passed** soundtrack
-* Mission Passed overlay
+* A rising fanfare
+* A gold "Accepted" title card
 
 ### Wrong Answer
 
-* GTA **Wasted** soundtrack
-* Wasted overlay
+* A sad trombone
+* A red "Wrong answer" title card over a greyed-out page
 
 ### Time Limit Exceeded
 
-* Windows XP Shutdown sound
-* Windows shutdown screen
+* A power-down sweep
+* A shutdown screen
 
 ### Runtime Error
 
-* Fake Windows BSOD
-* Windows error sound
+* A harsh double buzzer
+* A fake crash screen
 
 ### Memory Limit Exceeded
 
-* Windows "Out of Memory" dialog
-* Error sound
+* Three warning beeps
+* An "Out of memory" dialog box
 
 ### Compile Error
 
-* Fake compiler terminal
-* Build failure sound
+* A dull thud
+* A fake compiler terminal
 
 ---
 
@@ -48,11 +48,6 @@ Whether it's a satisfying **MISSION PASSED** after an Accepted solution or a nos
 SolveFX/
 │
 ├── manifest.json
-│
-├── assets/
-│   ├── icons/
-│   ├── images/
-│   └── sounds/
 │
 ├── src/
 │   ├── audio/
@@ -74,6 +69,7 @@ SolveFX/
 * Chrome Extensions (Manifest V3)
 * HTML
 * CSS
+* Web Audio API
 * Chrome Runtime API
 * DOM Manipulation
 * Fetch API Interception

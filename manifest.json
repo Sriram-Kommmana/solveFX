@@ -29,9 +29,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "src/content/inject.js",
-        "assets/sounds/*",
-        "assets/images/*"
+        "src/content/inject.js"
       ],
       "matches": [
         "https://leetcode.com/*"
